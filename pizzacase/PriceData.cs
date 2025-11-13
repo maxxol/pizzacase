@@ -6,23 +6,18 @@ namespace pizzacase
 {
     static class PriceData
     {
-        public static Dictionary<string, double> ToppingPricing = new Dictionary<string, double>();
+        public static Dictionary<string, double> ToppingPricing = new Dictionary<string, double>(); 
+        public static Dictionary<string, double> BasePricing = new Dictionary<string, double>();
 
-        // Method to fill a dictionary from a CSV file
-        
-
-        // Fill the pricing dictionaries
         public static void fillAllPricingDictionaries()
         {
-            fillToppingPricing();
-            // Additional methods to populate other pricing dictionaries can go here later
+            fillDictionaryFromCsv("../../../Data/ToppingPricing.csv", ToppingPricing);
+            fillDictionaryFromCsv("../../../Data/BasePricing.csv", BasePricing);
+
+
         }
 
-        // Fills the ToppingPricing dictionary specifically
-        static void fillToppingPricing()
-        {
-            fillDictionaryFromCsv("../../../ToppingPricing.csv", ToppingPricing);
-        }
+
 
 
 

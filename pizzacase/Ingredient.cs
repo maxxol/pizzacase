@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace pizzacase
 {
-    internal class Topping : Ingredient
+    internal class Ingredient
     {
-        public Topping(string _name) : base(_name)
+        public string name;
+        protected double price;
+        public Ingredient(string _name)
         {
             this.name = _name;
         }

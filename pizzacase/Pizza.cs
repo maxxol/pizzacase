@@ -6,20 +6,17 @@ using System.Threading.Tasks;
 
 namespace pizzacase
 {
-    internal class Pizza
+    internal class Pizza : OrderedItem
     {
-        private List<Topping>? toppings;
-        private double price;
         private string name;
-        public Pizza(List<Topping>? _toppings, string _name)
+        public Pizza(List<Topping>? _toppings)
         {
+            PriceData.BasePricing.TryGetValue("pizza", out this.basePrice);
+            
             this.toppings =_toppings;
-            this.name = _name;
-            PriceData.ToppingPricing.TryGetValue(name, out this.price);
+            this.name = "pizza";
+            //PriceData.ToppingPricing.TryGetValue(name, out this.price);
         }
-        public double getPrice()
-        {
-            return price;
-        }
+        
     }
 }
