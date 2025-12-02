@@ -10,6 +10,8 @@ namespace pizzacase
     internal class OrderedItem
     {
         public List<Topping> toppings;
+        public int quantity;
+
         public double basePrice;
         //public double price;
     
@@ -20,12 +22,12 @@ namespace pizzacase
                 foreach (Topping topping in toppings) { 
                 PriceData.ToppingPricing.TryGetValue(topping.name, out double value); 
                 toppingsPrice += value;
-                Console.WriteLine(value + " added");
+                //Console.WriteLine(value + " added");
                 }
-                Console.WriteLine("for total toppingprice of "+ toppingsPrice);
+                //Console.WriteLine("for total toppingprice of "+ toppingsPrice);
                 
-                double price = basePrice + toppingsPrice;
-            Console.WriteLine("item has total price of "+price);
+                double price = (basePrice + toppingsPrice)*quantity;
+           // Console.WriteLine("item has total price of "+price);
                 return price;
             }
     } 
