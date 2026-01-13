@@ -9,7 +9,7 @@ string clientName;
 
 string privateKey = "p4X9uD1fL7qW2sN8rC5tJ0vH6yZ3kM1b";
 
-
+//InternetClient.getInstance().sendData("TCP", "ping", privateKey);
 //-------------------------------main order------------------------
 while (true)
 {
